@@ -407,10 +407,28 @@ nav {
     display: grid;
     width: 90%;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+   
 }
 .pricecard ,.pricecard-1{
     width: 100%;
     padding: 30px 40px;
+    position: relative;
+    overflow: hidden;
+   
+}
+ .pricecard-1 .cardHeader::before ,.pricecard-1 .cardBody::before ,.pricecard .cardHeader::before ,.pricecard .cardBody::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background-color: #06a3da;
+    left: 0;
+    bottom: 0;
+     z-index: -1;
+    transition: all 0.5s;
+}
+.pricecard .cardHeader:hover:before, .pricecard .cardBody:hover:before, .pricecard-1 .cardHeader:hover:before ,.pricecard-1 .cardBody:hover:before{
+    height: 100%;
 }
 .pricing .content{
     text-align: center;
@@ -432,11 +450,19 @@ nav {
 }
 .pricecard{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    background-color: #eef9ff;;
+    /* background-color: #eef9ff;; */
 }
 .pricecard .cardHeader h3 ,.pricecard-1 .cardHeader h3{
     color: #06a3da;
     padding: 0 0 15px;
+}
+.pricecard :hover h3{
+    color: #fff;
+    /* z-index: ; */
+}
+.pricecard-1 :hover h3{
+    color: #fff;
+    /* z-index: ; */
 }
 .pricecard .cardHeader h4 ,.pricecard-1 .cardHeader h4{
     font-weight: 100;
